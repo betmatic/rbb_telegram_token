@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv';
 import input from "input";
 import { TelegramClient } from "telegram";
-import { NewMessage, NewMessageEvent } from "telegram/events";
+import { NewMessageEvent } from "telegram/events";
 import { StringSession } from "telegram/sessions";
 
 dotenv.config();
@@ -58,7 +58,7 @@ async function main() {
   if (!client.connected) await connect();
 
   // adds an event handler for new messages
-  client.addEventHandler(eventPrint, new NewMessage({}));
+  // client.addEventHandler(eventPrint, new NewMessage({}));
 
   if (client.connected) disconnect();
 }
